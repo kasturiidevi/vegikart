@@ -1,0 +1,13 @@
+# Test artifacts
+test_connect.php
+*.log
+gh_login_*
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+

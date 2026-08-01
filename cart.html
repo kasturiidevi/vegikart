@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VegiKart - Cart & Checkout</title>
+    <link rel="stylesheet" href="project2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body onload="displayCart()">
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="logo">
+        <i class="fa-solid fa-basket-shopping"></i> VegiKart
+    </div>
+    <ul>
+        <li><a href="home2.html">Home</a></li>
+        <li><a href="category.html">Categories</a></li>
+        <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li><a href="login2.html" class="login-btn">Login</a></li>
+    </ul>
+</nav>
+
+<!-- Cart Section -->
+<section class="cart-section">
+    <h1><i class="fa-solid fa-cart-shopping"></i> Your Shopping Cart</h1>
+    
+    <div class="cart-layout">
+        <!-- Left: Cart Items -->
+        <div class="cart-items-section">
+            <div class="coupon-box">
+                <input type="text" id="coupon" placeholder="Enter Coupon Code (e.g. VEGI20)">
+                <button type="button" onclick="applyCoupon()">Apply</button>
+            </div>
+            
+            <table id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cartBody"></tbody>
+            </table>
+            
+            <h2 id="totalPrice">Grand Total: ₹0</h2>
+        </div>
+        
+        <!-- Right: Order Summary -->
+        <div class="cart-summary-section">
+            <div id="orderSummary" class="cart-summary">
+                <h3>Order Summary</h3>
+            </div>
+    </div>
+</section>
+
+<!-- Checkout Section -->
+<section class="checkout-section">
+    <h2><i class="fa-solid fa-truck"></i> Delivery Address</h2>
+    
+    <form id="checkoutForm" onsubmit="placeOrder(event)">
+        <div class="checkout-grid">
+            <div class="form-group full-width">
+                <label>Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group half-width">
+                <label>Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phoneNumber" placeholder="10-digit mobile number" maxlength="10" required>
+            </div>
+            
+            <div class="form-group half-width">
+                <label>Email <span class="required">*</span></label>
+                <input type="email" id="emailAddress" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group full-width">
+                <label>House / Building / Flat No. <span class="required">*</span></label>
+                <input type="text" id="houseNo" placeholder="e.g. House No. 123, Apartment Name" required>
+            </div>
+            
+            <div class="form-group full-width">
+                <label>Street / Area / Locality <span class="required">*</span></label>
+                <input type="text" id="street" placeholder="e.g. MG Road, Indira Nagar" required>
+            </div>
+            
+            <div class="form-group half-width">
+                <label>Landmark (optional)</label>
+                <input type="text" id="landmark" placeholder="e.g. Near City Mall, Opposite Park">
+            </div>
+            
+            <div class="form-group half-width">
+                <label>City / Town <span class="required">*</span></label>
+                <input type="text" id="city" placeholder="Enter city" required>
+            </div>
+            
+            <div class="form-group half-width">
+                <label>District <span class="required">*</span></label>
+                <input type="text" id="district" placeholder="Enter district" required>
+            </div>
+            
+            <div class="form-group half-width">
+                <label>State <span class="required">*</span></label>
+                <select id="state" required>
+                    <option value="">Select State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+            </div>
+            
+            <div class="form-group half-width">
+                <label>Pincode <span class="required">*</span></label>
+                <input type="text" id="pincode" placeholder="6-digit pincode" maxlength="6" required>
+            </div>
+            
+            <div class="form-group full-width">
+                <label>Order Notes (optional)</label>
+                <textarea id="orderNotes" placeholder="Any special instructions for delivery..."></textarea>
+            </div>
+            
+            <div class="form-group full-width">
+                <label>Payment Method <span class="required">*</span></label>
+                <select id="paymentMethod" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="COD">Cash on Delivery</option>
+                    <option value="UPI">UPI (Google Pay / PhonePe / Paytm)</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="Credit Card">Credit Card</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="place-order-btn">
+                <i class="fa-solid fa-check-circle"></i> Place Order
+            </button>
+        </div>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>🛒 VegiKart</h3>
+            <p>Fresh groceries delivered to your doorstep at the best prices. Quality products, fast delivery and happy customers.</p>
+        </div>
+        <div class="footer-box">
+            <h3>Useful Links</h3>
+            <a href="home2.html">Home</a>
+            <a href="category.html">Categories</a>
+            <a href="search.html">Search Products</a>
+            <a href="cart.html">My Cart</a>
+            <a href="login2.html">Login</a>
+        </div>
+        <div class="footer-box">
+            <h3>Shop By Category</h3>
+            <a href="category.html">Fruits</a>
+            <a href="category.html">Vegetables</a>
+            <a href="category.html">Dairy & Milk</a>
+            <a href="category.html">Bakery</a>
+            <a href="category.html">Beverages</a>
+            <a href="category.html">Snacks</a>
+        </div>
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Dibrugarh, Assam</p>
+            <p><i class="fa-solid fa-phone"></i> +91 98647 21574</p>
+            <p><i class="fa-solid fa-envelope"></i> support@vegikart.com</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">© 2026 VegiKart Grocery Store | All Rights Reserved</div>
+</footer>
+
+<script src="project2.js"></script>
+<a href="cart.html" class="floating-cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cartCount">0</span>
+</a>
+</body>
+</html>

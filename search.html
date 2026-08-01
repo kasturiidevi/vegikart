@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VegiKart - Search Products</title>
+
+    <link rel="stylesheet" href="project2.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+    <i class="fa-solid fa-basket-shopping"></i> VegiKart
+</div>
+<ul>
+
+<li><a href="home2.html">Home</a></li>
+
+<li><a href="category.html">Categories</a></li>
+
+<li>
+<a href="search.html">
+<i class="fa-solid fa-magnifying-glass"></i>
+</a>
+</li>
+
+<li>
+<a href="cart.html">
+<i class="fa-solid fa-cart-shopping"></i>
+</a>
+</li>
+
+<li>
+<a href="login2.html" class="login-btn">
+Login
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="search-section">
+
+    <h1>Search Grocery Items</h1>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for grocery items..."
+        onkeyup="searchProduct()">
+
+</section>
+
+<section class="products">
+
+<div class="product-container" id="productList">
+
+<div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.3_BosVmdfve7m7g_XIJy9AHaHa?r=0&pid=Api&h=220&P=0" alt="Apples">
+
+    <h3>Fresh Apples</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★☆
+        <span>(4.5)</span>
+    </div>
+
+    <p class="description">
+        Fresh and juicy apples rich in vitamins.
+    </p>
+
+    <p class="stock">🍎 82 Sold Today</p>
+
+    <h2>₹120/kg</h2>
+
+    <button onclick="addToCart('Fresh Apples',120)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">15% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.pGEt--hBA6xKPN5qxASI8gAAAA?r=0&pid=Api&h=220&P=0" alt="Bananas">
+
+    <h3>Bananas</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.6)</span>
+    </div>
+
+    <p class="description">
+        Sweet bananas packed with potassium and natural energy.
+    </p>
+
+    <p class="stock">🍌 90 Sold Today</p>
+
+    <h2>₹60/dozen</h2>
+
+    <button onclick="addToCart('Bananas',60)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.zOuBzn-zZAuW_4xFiyaZ6gHaG3?r=0&pid=Api&h=220&P=0" alt="Oranges">
+
+    <h3>Oranges</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Fresh juicy oranges rich in Vitamin C and full of natural goodness.
+    </p>
+
+    <p class="stock">🍊 110 Sold Today</p>
+
+    <h2>₹120/kg</h2>
+
+    <button onclick="addToCart('Oranges',120)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">18% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.cFVllGbc7WQCBXvsDyCIQgHaHa?r=0&pid=Api&h=220&P=0" alt="Grapes">
+
+    <h3>Grapes</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.7)</span>
+    </div>
+
+    <p class="description">
+        Sweet and seedless grapes, freshly picked for maximum freshness.
+    </p>
+
+    <p class="stock">🍇 75 Sold Today</p>
+
+    <h2>₹150/kg</h2>
+
+    <button onclick="addToCart('Grapes',150)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">25% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.-hWHu_UlU39eWkXkq2B-BAHaHa?r=0&pid=Api&h=220&P=0" alt="Mangoes">
+
+    <h3>Mangoes</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Delicious juicy mangoes with a naturally sweet tropical flavor.
+    </p>
+
+    <p class="stock">🥭 140 Sold Today</p>
+
+    <h2>₹180/kg</h2>
+
+    <button onclick="addToCart('Mangoes',180)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">30% OFF</span>
+
+    <img src="https://i5.walmartimages.com/seo/Fresh-Strawberries-1-lb-Container_b54a64ad-e961-46cf-b60c-bc763716fb0b.a481cdfd237c5ab5438d5c9e90bead07.jpeg" alt="Strawberries">
+
+    <h3>Strawberries</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Fresh, juicy strawberries perfect for desserts, smoothies, and snacking.
+    </p>
+
+    <p class="stock">🍓 65 Sold Today</p>
+
+    <h2>₹250/box</h2>
+
+    <button onclick="addToCart('Strawberries',250)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">10% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.WMHwVWKKTLV3NyyWoU_1xwHaHa?r=0&pid=Api&h=220&P=0" alt="Potatoes">
+
+    <h3>Fresh Potatoes</h3>
+    
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.5)</span>
+    </div>
+
+    <p class="description">
+        Fresh potatoes perfect for fries, curries and snacks.
+    </p>
+
+    <p class="stock">🥔 85 Sold Today</p>
+
+    <h2>₹35/kg</h2>
+
+    <button onclick="addToCart('Fresh Potatoes',35)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.7zoV3hFW0N434hLj9Qux3AAAAA?r=0&pid=Api&h=220&P=0" alt="Onions">
+
+    <h3>Fresh Onions</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.7)</span>
+    </div>
+
+    <p class="description">
+        Fresh onions with rich flavor, perfect for every recipe.
+    </p>
+
+    <p class="stock">🔥 95 Sold Today</p>
+
+    <h2>₹35/kg</h2>
+
+    <button onclick="addToCart('Fresh Onions',35)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">25% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP._VvJKJaEsGfCo7pU2j9ZDQHaHa?r=0&pid=Api&h=220&P=0" alt="Tomatoes">
+
+    <h3>Fresh Tomatoes</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Farm-fresh tomatoes perfect for salads and curries.
+    </p>
+
+    <p class="stock">🔥 120 Sold Today</p>
+
+    <h2>₹40/kg</h2>
+
+    <button onclick="addToCart('Fresh Tomatoes',40)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">18% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.-nWRaFOsAKk0UXsvrWs7BwHaHa?r=0&pid=Api&h=220&P=0" alt="Carrots">
+
+    <h3>Fresh Carrots</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Crunchy carrots rich in Vitamin A and full of freshness.
+    </p>
+
+    <p class="stock">🔥 88 Sold Today</p>
+
+    <h2>₹60/kg</h2>
+
+    <button onclick="addToCart('Fresh Carrots',60)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">15% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.pRKJcZfLFIo6wvVVtqvWnAHaHa?r=0&pid=Api&h=220&P=0" alt="Cabbage">
+
+    <h3>Fresh Cabbage</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.6)</span>
+    </div>
+
+    <p class="description">
+        Green fresh cabbage ideal for salads and healthy meals.
+    </p>
+
+    <p class="stock">🔥 70 Sold Today</p>
+
+    <h2>₹45/piece</h2>
+
+    <button onclick="addToCart('Fresh Cabbage',45)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">22% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.xyQyh00Yy-k9mcZ5GezQfgHaHa?r=0&pid=Api&h=220&P=0" alt="Green Chilli">
+
+    <h3>Green Chilli</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.7)</span>
+    </div>
+
+    <p class="description">
+        Fresh green chillies with natural spice and aroma.
+    </p>
+
+    <p class="stock">🔥 65 Sold Today</p>
+
+    <h2>₹80/kg</h2>
+
+    <button onclick="addToCart('Green Chilli',80)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.yPDtqxfNKSsn-hB-Ky9QFwHaHa?r=0&pid=Api&h=220&P=0" alt="Ginger">
+
+    <h3>Fresh Ginger</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Farm-fresh ginger with rich aroma and natural flavor.
+    </p>
+
+    <p class="stock">🔥 90 Sold Today</p>
+
+    <h2>₹150/kg</h2>
+
+    <button onclick="addToCart('Fresh Ginger',150)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">18% OFF</span>
+
+    <img src="https://static.vecteezy.com/system/resources/previews/027/216/058/original/garlic-garlic-garlic-transparent-background-ai-generated-free-png.png" alt="Garlic">
+
+    <h3>Fresh Garlic</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.7)</span>
+    </div>
+
+    <p class="description">
+        Fresh aromatic garlic, perfect for enhancing every dish.
+    </p>
+
+    <p class="stock">🔥 95 Sold Today</p>
+
+    <h2>₹180/kg</h2>
+
+    <button onclick="addToCart('Fresh Garlic',180)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">10% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.NAOJRhik1jHK3UJSzy0gWwHaHa?r=0&pid=Api&h=220&P=0" alt="Milk">
+
+    <h3>Amul Milk</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(5.0)</span>
+    </div>
+
+    <p class="description">
+        The fresh and pure Amul cow milk.
+    </p>
+
+    <p class="stock">🥛 Bestseller</p>
+
+    <h2>₹55</h2>
+
+    <button onclick="addToCart('Amul Milk',55)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">30% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.RU4YRp1WE4DxoqWpxv26pAHaHa?r=0&pid=Api&h=220&P=0" alt="Cheese">
+
+    <h3>Amul Cheese</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Creamy cheese slices perfect for sandwiches and pizzas.
+    </p>
+
+    <p class="stock">🔥 140 Sold Today</p>
+
+    <h2>₹136/pack</h2>
+
+    <button onclick="addToCart('Amul Cheese',136)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">25% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.9C-YbsGUkwnZduVAdvl0xwHaHa?r=0&pid=Api&h=220&P=0" alt="Butter">
+
+    <h3>Amul Butter</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Rich creamy butter for cooking, baking and spreading.
+    </p>
+
+    <p class="stock">🔥 105 Sold Today</p>
+
+    <h2>₹130/pack</h2>
+
+    <button onclick="addToCart('Amul Butter',130)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.qB3J2W2x3GBGXv-kwOqfVAHaHa?r=0&pid=Api&h=220&P=0" alt="Paneer">
+
+    <h3>Amul Paneer</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Soft fresh paneer rich in protein and calcium.
+    </p>
+
+    <p class="stock">🔥 90 Sold Today</p>
+
+    <h2>₹99/100g</h2>
+
+    <button onclick="addToCart('Amul Paneer',99)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">18% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.EdN9A6E1YOrYujzhF3v9OwHaHa?r=0&pid=Api&h=220&P=0" alt="Curd">
+
+    <h3>Amul Masti Dahi</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.7)</span>
+    </div>
+
+    <p class="description">
+        Thick and creamy curd made from fresh milk.
+    </p>
+
+    <p class="stock">🔥 75 Sold Today</p>
+
+    <h2>₹70/500g</h2>
+
+    <button onclick="addToCart('Amul Masti Dahi',70)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">30% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.PU0oSJpNd8oD-8vn49Tb6gHaHa?r=0&pid=Api&h=220&P=0" alt="Amul Ice Cream">
+
+    <h3>Amul Ice Cream</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Creamy Amul vanilla ice cream loved by all ages.
+    </p>
+
+    <p class="stock">🔥 170 Sold Today</p>
+
+    <h2>₹120/tub</h2>
+
+    <button onclick="addToCart('Amul Ice Cream',120)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.NDrxVC3ztUVAe_5scAwh1QHaHa?r=0&pid=Api&h=220&P=0" alt="Bread">
+
+    <h3>Whole Wheat Bread</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.4)</span>
+    </div>
+
+    <p class="description">
+        Soft whole wheat bread baked fresh every morning.
+    </p>
+
+    <p class="stock">🍞 Fresh Arrival</p>
+
+    <h2>₹45</h2>
+
+    <button onclick="addToCart('Whole Wheat Bread',45)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">35% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.Z8yZNCq_OkkRvPycpL4EIQHaHa?r=0&pid=Api&h=220&P=0" alt="Cake">
+
+    <h3>Chocolate Cake</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Soft chocolate cake topped with rich creamy frosting.
+    </p>
+
+    <p class="stock">🔥 130 Sold Today</p>
+
+    <h2>₹450</h2>
+
+    <button onclick="addToCart('Chocolate Cake',450)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.z-t5NDJgyWYsEfl7mWxOXwHaHa?r=0&pid=Api&h=220&P=0" alt="Biscuits">
+
+    <h3>Milk Bikis</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Crispy tea-time biscuits loved by everyone.
+    </p>
+
+    <p class="stock">🔥 170 Sold Today</p>
+
+    <h2>₹50/pack</h2>
+
+    <button onclick="addToCart('Milk Bikis',50)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">35% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.7FTXezKPW-2C_YEAsz_tyQHaHa?r=0&pid=Api&h=220&P=0" alt="Cookies">
+
+    <h3>Chocolate Cookies</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Crunchy chocolate cookies made with premium cocoa.
+    </p>
+
+    <p class="stock">🍪 Top Rated</p>
+
+    <h2>₹99</h2>
+
+    <button onclick="addToCart('Chocolate Cookies',99)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">28% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.SQIicSkz8_C3NLoZiwnBkQHaHa?r=0&pid=Api&h=220&P=0" alt="Donut">
+
+    <h3>Chocolate Donut</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Fresh chocolate donut topped with colorful sprinkles.
+    </p>
+
+    <p class="stock">🔥 85 Sold Today</p>
+
+    <h2>₹70/piece</h2>
+
+    <button onclick="addToCart('Chocolate Donut',70)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">15% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.hzAexfaEVddew-OWPWSmsQHaHa?r=0&pid=Api&h=220&P=0" alt="Orange Juice">
+
+    <h3>Tropicana Orange Juice</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.7)</span>
+    </div>
+
+    <p class="description">
+        Refreshing orange juice made from real fruit.
+    </p>
+
+    <p class="stock">🔥 92 Sold Today</p>
+
+    <h2>₹120/L</h2>
+
+    <button onclick="addToCart('Tropicana Orange Juice',120)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">10% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.1sb-hqzkyxQyFBwEg_lruwHaHa?r=0&pid=Api&h=220&P=0" alt="Pepsi">
+
+    <h3>Pepsi</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Chilled Pepsi with refreshing cola taste.
+    </p>
+
+    <p class="stock">🔥 150 Sold Today</p>
+
+    <h2>₹45</h2>
+
+    <button onclick="addToCart('Pepsi',45)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">10% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.UFkOHlN1jFFzMZrYOQTppwHaHa?r=0&pid=Api&h=220&P=0" alt="Sprite">
+
+    <h3>Sprite</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Lemon-lime soft drink with refreshing fizz.
+    </p>
+
+    <p class="stock">🔥 145 Sold Today</p>
+
+    <h2>₹45</h2>
+
+    <button onclick="addToCart('Sprite',45)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">12% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.MGOStm0orsIpGUSpZ07QagHaHa?r=0&pid=Api&h=220&P=0" alt="Maaza">
+
+    <h3>Maaza</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Delicious mango drink with rich fruity flavor.
+    </p>
+
+    <p class="stock">🔥 135 Sold Today</p>
+
+    <h2>₹40</h2>
+
+    <button onclick="addToCart('Maaza',40)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">10% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.FZBzdXkitzdhNiFQg4_whgHaFj?r=0&pid=Api&h=220&P=0" alt="Coca Cola">
+
+    <h3>Coca-Cola</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Classic Coca-Cola with its signature refreshing taste.
+    </p>
+
+    <p class="stock">🔥 165 Sold Today</p>
+
+    <h2>₹45</h2>
+
+    <button onclick="addToCart('Coca-Cola',45)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">18% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.36tNcIG3wD0cEem-U0lwtAHaHa?r=0&pid=Api&h=220&P=0" alt="Diet Coke">
+
+    <h3>Diet Coke</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.3)</span>
+    </div>
+
+    <p class="description">
+        Refreshing chilled cola for every celebration.
+    </p>
+
+    <p class="stock">🥤 Trending</p>
+
+    <h2>₹50</h2>
+
+    <button onclick="addToCart('Diet Coke',50)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.nsYZ-OnB2M9v9HlHqOavngHaHa?r=0&pid=Api&h=220&P=0" alt="Uncle Chips">
+
+    <h3>Uncle Chips</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Crispy salted potato chips with the classic Uncle Chips flavor.
+    </p>
+
+    <p class="stock">🔥 180 Sold Today</p>
+
+    <h2>₹20/pack</h2>
+
+    <button onclick="addToCart('Uncle Chips',20)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">25% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.xj9xeMNXw9TmIKWffLCccQHaHa?r=0&pid=Api&h=220&P=0" alt="Dairy Milk Chocolate">
+
+    <h3>Dairy Milk Chocolate</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Smooth and creamy milk chocolate loved by everyone.
+    </p>
+
+    <p class="stock">🔥 160 Sold Today</p>
+
+    <h2>₹40</h2>
+
+    <button onclick="addToCart('Dairy Milk Chocolate',40)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">15% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.9iKopH0hipspm7R1FO7Z4QAAAA?r=0&pid=Api&h=220&P=0" alt="Maggi">
+
+    <h3>Maggi</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        India's favorite instant noodles, ready in just 2 minutes.
+    </p>
+
+    <p class="stock">🔥 220 Sold Today</p>
+
+    <h2>₹10/pack</h2>
+
+    <button onclick="addToCart('Maggi',10)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">18% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.RJ-glp6s6uxPb8INtuJdMQHaHa?r=0&pid=Api&h=220&P=0" alt="ACT II Popcorn">
+
+    <h3>ACT II Popcorn</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★☆ <span>(4.7)</span>
+    </div>
+
+    <p class="description">
+        Delicious microwave popcorn with rich buttery flavor.
+    </p>
+
+    <p class="stock">🔥 125 Sold Today</p>
+
+    <h2>₹45/pack</h2>
+
+    <button onclick="addToCart('ACT II Popcorn',45)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">22% OFF</span>
+
+    <img src="https://tse4.mm.bing.net/th/id/OIP.KleRjrdRNOas7fe7kiYGRgHaHa?r=0&pid=Api&h=220&P=0" alt="Bikaji Aloo Bhujia">
+
+    <h3>Bikaji Aloo Bhujia</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Crispy and spicy potato bhujia, perfect for every snack break.
+    </p>
+
+    <p class="stock">🔥 145 Sold Today</p>
+
+    <h2>₹65/pack</h2>
+
+    <button onclick="addToCart('Bikaji Aloo Bhujia',65)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">15% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.KHMw_c_92Oin3Q4CFCvJQQHaHa?r=0&pid=Api&h=220&P=0" alt="Kurkure">
+
+    <h3>Kurkure Masala Munch</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Crunchy and spicy Kurkure for your snack cravings.
+    </p>
+
+    <p class="stock">🔥 210 Sold Today</p>
+
+    <h2>₹20/pack</h2>
+
+    <button onclick="addToCart('Kurkure Masala Munch',20)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">18% OFF</span>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.AoPdYHmiI8tpe7ca41s3HwHaHa?r=0&pid=Api&h=220&P=0" alt="KitKat">
+
+    <h3>KitKat</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Crispy wafer fingers coated with delicious milk chocolate.
+    </p>
+
+    <p class="stock">🔥 180 Sold Today</p>
+
+    <h2>₹30</h2>
+
+    <button onclick="addToCart('KitKat',30)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">22% OFF</span>
+
+    <img src="https://tse2.mm.bing.net/th/id/OIP.2Rxmat7lv7wBGgb1Nbe9dgAAAA?r=0&pid=Api&h=220&P=0" alt="Bikaji Nut Cracker">
+
+    <h3>Bikaji Nut Cracker</h3>
+
+    <div class="wishlist">❤</div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Crunchy and spicy nut cracker snack for every occasion.
+    </p>
+
+    <p class="stock">🔥 140 Sold Today</p>
+
+    <h2>₹65/pack</h2>
+
+    <button onclick="addToCart('Bikaji Nut Cracker',65)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">12% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.0-tlwhqfN-26DYxYGGW0pQHaHa?r=0&pid=Api&h=220&P=0" alt="Eggs">
+
+    <h3>Farm Eggs</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.8)</span>
+    </div>
+
+    <p class="description">
+        Fresh farm eggs rich in protein and nutrition.
+    </p>
+
+    <p class="stock">🥚 70 Sold Today</p>
+
+    <h2>₹90/dozen</h2>
+
+    <button onclick="addToCart('Farm Eggs',90)">
+        Add to Cart
+    </button>
+
+</div>
+
+<div class="product-card">
+
+    <span class="discount">30% OFF</span>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.N3yXu26rjs9i9cnrSgguQQHaHa?r=0&pid=Api&h=220&P=0" alt="Rice">
+
+    <h3>India Gate Basmati Rice</h3>
+
+    <div class="wishlist">
+        ❤
+    </div>
+
+    <div class="rating">
+        ★★★★★ <span>(4.9)</span>
+    </div>
+
+    <p class="description">
+        Premium long-grain basmati rice with rich aroma.
+    </p>
+
+    <p class="stock">🔥 Limited Stock</p>
+
+    <h2>₹80/kg</h2>
+
+    <button onclick="addToCart('India Gate Basmati Rice',80)">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>🛒 VegiKart</h3>
+            <p>
+                Fresh groceries delivered to your doorstep at the best prices.
+                Quality products, fast delivery and happy customers.
+            </p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Useful Links</h3>
+
+            <a href="home2.html">Home</a>
+            <a href="category.html">Categories</a>
+            <a href="search.html">Search Products</a>
+            <a href="cart.html">My Cart</a>
+            <a href="login2.html">Login</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Shop By Category</h3>
+
+            <a href="category.html">Fruits</a>
+            <a href="category.html">Vegetables</a>
+            <a href="category.html">Dairy & Milk</a>
+            <a href="category.html">Bakery</a>
+            <a href="category.html">Beverages</a>
+            <a href="category.html">Snacks</a>           
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p><i class="fa-solid fa-location-dot"></i> Dibrugarh, Assam</p>
+
+            <p><i class="fa-solid fa-phone"></i> +91 98647 21574</p>
+
+            <p><i class="fa-solid fa-envelope"></i> support@vegikart.com</p>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+
+        © 2026 VegiKart Grocery Store | All Rights Reserved
+
+    </div>
+
+</footer>
+
+<script src="project2.js"></script>
+
+<a href="cart.html" class="floating-cart">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="cartCount">0</span>
+
+</a>
+
+</body>
+</html>
